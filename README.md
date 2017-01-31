@@ -7,8 +7,8 @@ For Unity Framework
 <li>AsyncTask</li>
 <li>AsyncLazy</li>
 <li>Promise</li>
-<li>Fsm<li>
-<li>ObjectPool<li>
+<li>Fsm</li>
+<li>ObjectPool</li>
 <li>HttpManager</li> 
 <li>AssetBundleManager</li>
 <li>SceneManager</li>
