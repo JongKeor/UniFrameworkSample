@@ -11,9 +11,11 @@ public class HomeController : TabSceneController {
 	private Button button2;
 
 
-	public override void OnLoad ()
+	
+
+	public override void OnOpen (Dictionary<string, object> arguments)
 	{
-		base.OnLoad ();
+		base.OnOpen (arguments);
 		button1 = this.canvases[0].gameObject.FindChildObjectByName("Button1").GetComponent<Button>();
 		button1.onClick.AddListener( ()=> {
 			SwitchTabScene(0);
@@ -23,13 +25,6 @@ public class HomeController : TabSceneController {
 		button2.onClick.AddListener( ()=> {
 			SwitchTabScene(1);
 		});
-
-
-	}
-
-	public override void OnOpen (Dictionary<string, object> arguments)
-	{
-		base.OnOpen (arguments);
 	}
 
 	public override void OnClose ()
