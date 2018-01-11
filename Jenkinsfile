@@ -6,23 +6,35 @@ pipeline {
     
   }
   stages {
-    stage('Android') {
+    stage('Common') {
+      steps {
+        echo 'Start'
+        svn(changelog: true, url: 'http://10.221.2.136/nw1/Victory/trunk/Victory/Victory', poll: true)
+      }
+    }
+    stage('Build') {
       parallel {
         stage('Android') {
           steps {
-            echo 'test'
+            echo 'Androi'
           }
         }
-        stage('Ios') {
+        stage('IOS') {
           steps {
-            echo 'ios'
+            echo 'Ios'
+            sh 'echo \'hello\''
           }
         }
         stage('Window') {
           steps {
-            echo 'window'
+            echo 'Window'
           }
         }
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'deploy'
       }
     }
   }
